@@ -6,7 +6,7 @@ class Rental_property_calculator():
         self.current_cash_flow = 0
 
     def income(self):
-        self.rental_income = input("\nWhat is your monthy rental income: ")
+        self.rental_income = input("\nWhat is your monthly rental income: ")
         question1 = input("Do you have any additional related income (Laundry, Storage, etc.): ")
         if question1.lower() == 'yes' or question1.lower() == 'y':
             extra1 = input("How much is it: ")
@@ -16,22 +16,22 @@ class Rental_property_calculator():
             print(f"Your total monthly income is ${self.rental_income}")
 
     def expenses(self):
-        diary_exp = {}
+        dict_exp = {}
         print("\nEnter your expenses, than enter how much they cost. Type DONE when finished.")
         while True:
             key = input("What expense do you have: ")
             if key.lower() == 'done':
                 break
             value = input("How much does that cost: ")
-            diary_exp[key] = value
+            dict_exp[key] = value
             
-        for x in diary_exp.values():
-            self.property_expenses += int(x)
+        for exp in dict_exp.values():
+            self.property_expenses += int(exp)
         print(f"\nYour total monthly expenses is ${self.property_expenses}")
 
     def cash_flow(self):
         self.current_cash_flow = int(self.rental_income) - int(self.property_expenses)
-        print(f"Based on the info, your monthly cash flow is ${self.current_cash_flow}.")
+        print(f"Based on the info you have given, your monthly cash flow is ${self.current_cash_flow}.")
 
     def return_on_investment(self):
         self.current_cash_flow = int(self.rental_income) - int(self.property_expenses)
@@ -40,7 +40,7 @@ class Rental_property_calculator():
         while True:
             d_p = input("\nHow much was the down payment: ")
             c_c = input("How much was the closing cost: ")
-            question2 = input("Where there any additional money spect (Rehbas, etc.): ")
+            question2 = input("Was there any additional money spent (Rehbas, etc.): ")
             if question2.lower() == 'yes' or question2.lower() == 'y':
                 extra2 = input("How much was it: ")
                 total = (int(d_p) + int(c_c) + int(extra2))
@@ -56,7 +56,7 @@ class Rental_property_calculator():
 landlord = Rental_property_calculator()
 
 def run_calculator():
-    print("\nWELCOME TO THE RETURN.ON.INVESTMENT CALCUTAOR - This program will help you determine your ROI based on information you give it.")
+    print("\nWELCOME TO THE RETURN ON INVESTMENT CALCUTAOR - This program will help you determine your ROI based on information you give it.")
     print("\nFirst, you'll need to enter both your Income and Expenses (TYPE Income or Expenses), once both pieces of informations are in you'll be able to calculate your ROI (TYPE ROI).")
     print("At any point you can see your monthly Cash Flow (TYPE Cash Flow), you can also quit the program when you are finished using it (TYPE Quit).")      
           
