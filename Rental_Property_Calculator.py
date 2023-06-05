@@ -23,8 +23,10 @@ class Rental_property_calculator():
             if key.lower() == 'done':
                 break
             value = input("How much does that cost: ")
+            if value.lower() == 'done':
+                break
             dict_exp[key] = value
-            
+        print('\n',f"Here is a list of your expenses: {dict_exp}")
         for exp in dict_exp.values():
             self.property_expenses += int(exp)
         print(f"\nYour total monthly expenses is ${self.property_expenses}")
