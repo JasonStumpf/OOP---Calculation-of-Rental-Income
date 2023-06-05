@@ -48,7 +48,7 @@ class Rental_property_calculator():
                 break
             elif question2.lower() == 'no' or question2.lower() == 'n':
                 total = (int(d_p) + int(c_c))
-                print(f"Your total investment was {total}")
+                print(f"Your total investment was ${total}")
                 break  
         roi = ((int(annual) / int(total)) * 100)
         print(f"\nYOUR CASH ON CASH RETURN ON INVESTMENT IS {roi}%")
